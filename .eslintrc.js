@@ -13,7 +13,8 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'indent': ['error', 4],
         'quotes': ['error', 'single'],
-        'semi': ['error', 'always']
+        'semi': ['error', 'always'],
+        'no-lang-in-attr': 'error'
     },
     globals: { // 配置全局变量
         _: true // true允许被重写，false不允许被重写
