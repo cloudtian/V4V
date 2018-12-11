@@ -1,1 +1,1 @@
-require('../core').setLang(/* start>>> */{}/* end<<< */)
+require('../core').setLang(/* start>>> */{}/* end<<< */);

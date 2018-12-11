@@ -1,11 +1,11 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-let mLang = {}
+let mLang = {};
 
 let _ = function (str) {
-    let args = Array.prototype.slice.call(arguments, 1)
+    let args = Array.prototype.slice.call(arguments, 1);
 
-    str = mLang.hasOwnProperty(str) ? mLang[str] : str
+    str = mLang.hasOwnProperty(str) ? mLang[str] : str;
 
     /**
      * 字符串中可以包含形如{#mark#}的文本，用于附加额外语境信息。
@@ -15,22 +15,22 @@ let _ = function (str) {
      * 启用{#verb#} -> Enable
      */
     return str.replace(/\{(\d+|#[\w,]+#)\}/g, (m, i) => {
-        i = parseInt(i, 10)
+        i = parseInt(i, 10);
 
         if (isNaN(i)) {
-            return ''
+            return '';
         }
 
         if (i >= 0 && i < args.length) {
-            return args[i]
+            return args[i];
         }
 
-        return m
-    })
-}
+        return m;
+    });
+};
 
 export function setLang (lang) {
-    mLang = lang
+    mLang = lang;
 }
 
-Vue.prototype._ = window._ = _
+Vue.prototype._ = window._ = _;

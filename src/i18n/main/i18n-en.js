@@ -1,3 +1,3 @@
 require('../core').setLang(/* start>>> */{
 
-}/* end<<< */)
+}/* end<<< */);

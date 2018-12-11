@@ -1,37 +1,37 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
 let component = {
     methods: {
         _renderHTML () {
-            let slotText = this.$slots.default[0].text
+            let slotText = this.$slots.default[0].text;
 
-            let attrMap = {}
+            let attrMap = {};
 
-            let attrs
+            let attrs;
 
             if (!this.$isMounted) {
-                return slotText
+                return slotText;
             }
 
-            attrs = this.$el.attributes
+            attrs = this.$el.attributes;
 
             Object.keys(attrs).forEach((key) => {
-                let attr = attrs[key]
+                let attr = attrs[key];
 
-                attrMap[attr.nodeName] = attr.nodeValue
-            })
+                attrMap[attr.nodeName] = attr.nodeValue;
+            });
 
-            slotText = _(slotText)
+            slotText = _(slotText);
 
             return slotText.replace(/\{(.+?)\}/g, (match, i) => {
-                return attrMap[i] || ''
-            })
+                return attrMap[i] || '';
+            });
         }
     },
 
     mounted () {
-        this.$isMounted = true
-        this.$forceUpdate()
+        this.$isMounted = true;
+        this.$forceUpdate();
     },
 
     render (createElem) {
@@ -39,8 +39,8 @@ let component = {
             attrs: {
                 class: 'language-wrap'
             }
-        }, this._renderHTML())
+        }, this._renderHTML());
     }
-}
+};
 
-Vue.component('lang', component)
+Vue.component('lang', component);
