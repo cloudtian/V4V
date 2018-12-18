@@ -9,6 +9,8 @@
 // Rule Definition
 //------------------
 
+const utils = require('eslint-plugin-vue/lib/utils');
+
 module.exports = {
     meta: {
         docs: {

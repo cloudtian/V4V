@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "clint": "vue-cli-service lint --rulesdir eslint-rules",
+    "lint": "vue-cli-service lint --rulesdir eslint-rules",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
