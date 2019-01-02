@@ -6,8 +6,19 @@ function resolve (dir) {
 
 module.exports = {
     baseUrl: './',
+    devServer: {
+        proxy: {
+            '/api/': {
+                target: 'http://localhost:8080/',
+                pathRewrite: {
+                    '^/api': '/mock'
+                }
+            }
+        }
+    },
     configureWebpack: config => {
 
+        // 使用更加友好的sourceMap，并去掉压缩
         // config.devtool = 'source-map';
         // config.optimization = {
         //     minimize: false
