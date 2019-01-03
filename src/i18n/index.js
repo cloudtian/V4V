@@ -6,4 +6,3 @@ const LANG = {
 let lang = LANG.EN;
 
 require(`@/i18n/main/i18n-${lang}`);
-require('@/i18n/lang');
