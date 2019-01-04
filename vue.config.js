@@ -17,13 +17,11 @@ module.exports = {
         }
     },
     configureWebpack: config => {
-
-        //使用更加友好的sourceMap，并去掉压缩
+        // 使用更加友好的sourceMap，并去掉压缩
         config.devtool = 'source-map';
         config.optimization = {
             minimize: false
-        }
-
+        };
     },
     chainWebpack: config => {
         config.module
@@ -37,7 +35,7 @@ module.exports = {
                 ]
             }));
 
-            config.resolve.alias
+        config.resolve.alias
             .set('@', resolve('src'))
             .set('assets', resolve('src/asserts'))
             .set('components', resolve('src/components'));
