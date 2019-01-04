@@ -30,16 +30,16 @@ export default {
     render (createElement) {
         let data = this.menuData;
 
-        function getMenuItem ({index, icon, text}) {
+        function getMenuItem ({ index, icon, text }) {
             return createElement('el-menu-item', {
                 attrs: {
                     index: index
                 }
             }, [
-                icon ?
-                createElement('i', {
-                    class: icon
-                }) : '',
+                icon
+                    ? createElement('i', {
+                        class: icon
+                    }) : '',
                 text
             ]);
         };
@@ -50,10 +50,10 @@ export default {
                     createElement('template', {
                         slot: 'title'
                     }, [
-                        item.group.icon ?
-                        createElement('i', {
-                            class: item.group.icon
-                        }) : '',
+                        item.group.icon
+                            ? createElement('i', {
+                                class: item.group.icon
+                            }) : '',
                         item.group.text
                     ]),
                     ...(item.group.items || []).map(i => getMenuTemplate(i))
@@ -69,10 +69,10 @@ export default {
                     createElement('template', {
                         slot: 'title'
                     }, [
-                        item.icon ?
-                        createElement('i', {
-                            class: item.icon
-                        }) : '',
+                        item.icon
+                            ? createElement('i', {
+                                class: item.icon
+                            }) : '',
                         item.text
                     ]),
                     ...(item.children || []).map(i => getMenuTemplate(i))
@@ -96,5 +96,5 @@ export default {
             }
         }, menuItems);
     }
-}
+};
 </script>
