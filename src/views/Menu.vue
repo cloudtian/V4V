@@ -1,5 +1,5 @@
 <template>
-  <el-menu :router="true"
+  <!-- <el-menu :router="true"
            :default-active="defaultActive"
            :style="{height: '100%'}">
     <el-menu-item index="/">
@@ -32,21 +32,61 @@
       </template>
       <el-menu-item index="/about">导入导出</el-menu-item>
     </el-submenu>
-  </el-menu>
+  </el-menu> -->
+  <v4v-menu :menuData="menuData"></v4v-menu>
 </template>
 
 <script>
+
+import V4vMenu from 'components/menu/index.vue';
 
 const DEFAULT_ACTIVE = '/';
 
 export default {
 
-    name: 'Menu',
+	name: 'Menu',
+
+	components: {
+		V4vMenu
+	},
 
     data () {
         return {
-            defaultActive: this.$route.path || DEFAULT_ACTIVE
-        };
+			defaultActive: this.$route.path || DEFAULT_ACTIVE,
+			menuData: [{
+				index: '/',
+				icon: 'el-icon-location',
+				text: 'home'
+			}, {
+				index: '2',
+				icon: 'el-icon-location',
+				text: 'vue',
+				children: [{
+					index: '2-1',
+					text: 'lifecycle',
+					children: [{
+						index: '/lifecycle-overview',
+						text: 'overview'
+					}]
+				}, {
+					group: {
+						text: 'group',
+						items: [{
+							index: '2-2',
+							text: 'group1'
+						}]
+					}
+				}],
+			}, {
+				index: '3',
+				icon: 'el-icon-location',
+				text: 'es6',
+				children: [{
+					index: '/about',
+					text: 'export/import'
+				}]
+			}]
+		};
     }
 };
 
