@@ -36,5 +36,10 @@ module.exports = {
                     resolve('eslint-rules')
                 ]
             }));
+
+            config.resolve.alias
+            .set('@', resolve('src'))
+            .set('assets', resolve('src/asserts'))
+            .set('components', resolve('src/components'));
     }
 };
