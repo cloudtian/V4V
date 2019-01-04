@@ -16,10 +16,8 @@ export default {
     name: 'NotFound',
 
     methods: {
-        __goBack() {
-            this.$router.push({
-                name: 'index'
-            });
+        __goBack () {
+            this.$router.go(-1);
         }
     }
 };
