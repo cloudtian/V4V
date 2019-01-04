@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'home',
+    name: 'Home',
 
     data () {
         return {
@@ -20,12 +20,10 @@ export default {
     mounted () {
         this.$http.get('/api/dynamic_data').then(res => {
             this.d = res.data;
-            console.log(res)
         });
 
         this.$http.get('/api/static_data').then(res => {
             this.s = res.data;
-            console.log(res)
         });
     }
 };

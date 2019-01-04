@@ -21,7 +21,7 @@
 import HomeMenu from './views/Menu.vue';
 
 export default {
-    name: 'index',
+    name: 'Index',
     components: {
         HomeMenu
     }
