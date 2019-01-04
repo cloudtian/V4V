@@ -18,11 +18,11 @@ module.exports = {
     },
     configureWebpack: config => {
 
-        // 使用更加友好的sourceMap，并去掉压缩
-        // config.devtool = 'source-map';
-        // config.optimization = {
-        //     minimize: false
-        // }
+        //使用更加友好的sourceMap，并去掉压缩
+        config.devtool = 'source-map';
+        config.optimization = {
+            minimize: false
+        }
 
     },
     chainWebpack: config => {
